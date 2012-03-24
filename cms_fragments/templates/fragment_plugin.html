@@ -1,0 +1,39 @@
+{% load sekizai_tags %}
+
+{% if fragment.fragment_type == 'css' %}
+{% addtoblock "css" %}
+    {% if fragment.file  %}
+    <link href="{{ fragment.file.url }}" rel="stylesheet">
+    {% endif %}
+    {% if fragment.direct_url  %}
+    <link href="{{ fragment.direct_url }}" rel="stylesheet">
+    {% endif %}
+    {% if fragment.inline_code  %}
+    {% autoescape off %}
+        <style>{{ fragment.inline_code }}</style>
+    {% endautoescape %}
+    {% endif %}
+{% endaddtoblock %}
+{% endif %}
+
+{% if fragment.fragment_type == 'js' %}
+{% addtoblock "css" %}
+    {% if fragment.file  %}
+    <script src="{{ fragment.file.url }}" type="text/javascript"></script>
+    {% endif %}
+    {% if fragment.direct_url  %}
+    <script src="{{ fragment.direct_url }}" type="text/javascript"></script>
+    {% endif %}
+    {% if fragment.inline_code  %}
+    {% autoescape off %}
+    <script type="text/javascript">{{ fragment.inline_code  }}</script>
+    {% endautoescape %}
+    {% endif %}
+{% endaddtoblock %}
+{% endif %}
+
+{% if fragment.fragment_type == 'html' %}
+{% autoescape off %}
+{{ fragment.inline_code }}
+{% endautoescape %}
+{% endif %}

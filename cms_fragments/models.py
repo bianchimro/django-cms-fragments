@@ -40,6 +40,9 @@ class FragmentMembership(models.Model):
     
     class Meta:
         ordering = ('order',)
+
+class FragmentPluginModel(CMSPlugin):
+    fragment = models.ForeignKey(Fragment)
     
 
 class FragmentCollectionPluginModel(CMSPlugin):

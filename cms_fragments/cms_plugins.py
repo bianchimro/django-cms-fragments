@@ -2,7 +2,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 
-from models import FragmentCollectionPluginModel
+from models import FragmentPluginModel, FragmentCollectionPluginModel
 
 class FragmentCollectionPlugin(CMSPluginBase):
     model = FragmentCollectionPluginModel
@@ -59,3 +59,19 @@ class FragmentCollectionPlugin(CMSPluginBase):
 
 #registering the plugin
 plugin_pool.register_plugin(FragmentCollectionPlugin)
+
+
+class FragmentPlugin(CMSPluginBase):
+    model = FragmentPluginModel
+    name = _("Fragment Plugin")
+    render_template = "fragment_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        
+        fragment = instance.fragment
+        context['fragment'] = fragment
+        context['instance'] = instance
+        
+        return context
+
+plugin_pool.register_plugin(FragmentPlugin)
