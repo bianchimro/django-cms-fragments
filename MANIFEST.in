@@ -1,0 +1,6 @@
+include LICENSE README.rst
+recursive-include cms_fragments/templates *
+recursive-include cms_fragments/static *
+
+
+

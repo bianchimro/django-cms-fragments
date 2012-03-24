@@ -1,0 +1,31 @@
+{% load sekizai_tags %}
+
+{% for f in css_sources %}
+{% addtoblock "css" %}
+    {% if f.1 == 'src' %}
+    <link href="{{ f.0 }}" rel="stylesheet">
+    {% endif %}
+    {% if f.1 == 'inline' %}
+        {% autoescape off %}
+        <style>{{ f.0 }}</style>
+        {% endautoescape %}
+    {% endif %}
+{% endaddtoblock %}
+{% endfor %}
+
+{% for f in js_sources %}
+{% addtoblock "js" %}
+    {% if f.1 == 'src' %}
+    <script src="{{ f.0 }}" type="text/javascript"></script>
+    {% endif %}
+    {% if f.1 == 'inline' %}
+        {% autoescape off %}
+        <script type="text/javascript">{{ f.0 }}</script>
+        {% endautoescape %}
+    {% endif %}
+{% endaddtoblock %}
+{% endfor %}
+
+{% autoescape off %}
+{{ html_content }}
+{% endautoescape %}
