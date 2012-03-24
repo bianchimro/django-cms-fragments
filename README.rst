@@ -26,7 +26,7 @@ Implemented Features
 current version:0.0.2
 
 * FragmentCollection and Fragment models, with admin integration
-* FragmentCollectionPlugin for django-cms
+* FragmentPlugin and FragmentCollectionPlugin for django-cms
 * css fragments from files, url or inline code
 * js fragments from files, url or inline code
 * html fragments from files or inline code
@@ -49,6 +49,11 @@ planned version:0.1.0
 Installation
 ------------
 
+* Install via pip:
+
+    pip install django-cms-fragments
+
+
 * Add 'cms_fragments' to your INSTALLED_APPS
 * Use 'django.contrib.staticfiles', or copy the static subfolder of django-cms-fragments
   to your static folder
@@ -59,9 +64,9 @@ Installation
 Usage
 -----
 
-To use the plugin, you must create some FragmentCollection instances with the Django admin.
+To use the plugin, you must create some Fragment or FragmentCollection instances with the Django admin.
 FragmentCollections are a collection of Fragments.
-Once you have one or more FragmentCollections in the DB, you can choose which one to put in a
+Once you have one or more Fragments or FragmentCollections in the DB, you can choose which one to put in a
 plugin, with the usual django-cms interface.
 ...
 
