@@ -26,6 +26,7 @@ Implemented Features
 current version:0.0.2
 
 * FragmentCollection and Fragment models, with admin integration
+* FragmentCollectionPlugin for django-cms
 * css fragments from files, url or inline code
 * js fragments from files, url or inline code
 * html fragments from files or inline code
