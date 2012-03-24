@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
 import os
-
+import cms_fragments
 
 setup(
-    name='django-cms-fragments',
-    version='0.0.2',
-    description='Injecting fragments of js, css and html in a django-cms plugin',
-    long_description=open('README.rst').read(),
-    author='Mauro Bianchi',
-    author_email='bianchimro@gmail.com',
-    license='BSD',
-    url='https://github.com/bianchimro/django-cms-fragments',
+    name = 'django-cms-fragments',
+    version = cms_fragments.__version__,
+    description = 'Injecting fragments of js, css and html in a django-cms plugin',
+    long_description = open('README.rst').read(),
+    author = cms_fragments.__author__,
+    author_email = cms_fragments.__email__,
+    license = 'BSD',
+    url = cms_fragments.__url__,
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
