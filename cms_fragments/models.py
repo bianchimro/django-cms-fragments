@@ -5,6 +5,7 @@ import editarea
 
 class Fragment(models.Model):
     
+    name = models.CharField(max_length=100)
     fragment_type = models.CharField(max_length=10, choices=(('js', 'javascript'), ('css', 'css'),('html', 'HTML fragment')))
     file = models.FileField(null=True, blank=True, upload_to="cms_fragments");
     direct_url = models.URLField(null=True, blank=True)
@@ -17,11 +18,11 @@ class Fragment(models.Model):
     
     def __unicode__(self):
         if self.file:
-            return u'%s: %s' % (self.fragment_type, self.file.url)
+            return u'%s (%s): %s' % (self.name, self.fragment_type, self.file.url)
         if self.direct_url:
-            return u'%s: %s' % (self.fragment_type, self.direct_url)
+            return u'%s (%s): %s' % (self.name, self.fragment_type, self.direct_url)
         if self.inline_code:
-            return u'%s: %s' % (self.fragment_type, "(inline code)")
+            return u'%s (%s): %s' % (self.name, self.fragment_type, "(inline code)")
         return "none"
 
     
