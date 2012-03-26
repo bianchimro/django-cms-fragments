@@ -11,8 +11,8 @@ The plugin basically adds jss and js to the page, using sekizai tags.
 It relies on the fact that django-cms requires "js" and "css" blocks to work.
 The html fragments are rendered within the plugin template.
 
-**This package is in an alpha stage, don't use it in production. I will hopefully
-provide a more stable version very soon.**
+**This package is in an alpha stage, don't use it in production. I will
+provide a more stable version from v 0.1.0.**
 
 I created the project because i didn't want to have to modify my cms installation
 by adding templates or app_hooks for displaying rich visualizations such as
