@@ -10,11 +10,16 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-
+   
+   introduction
+   installation
+   usage
+   compatibility
+   credits
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
