@@ -11,14 +11,12 @@ The plugin basically adds jss and js to the page, using sekizai tags.
 It relies on the fact that django-cms requires "js" and "css" blocks to work.
 The html fragments are rendered within the plugin template.
 
-**This package is in an alpha stage, don't use it in production. I will
-provide a more stable version from v 0.1.0.**
+**This package is in an alpha stage, don't use it in production.**
 
 I created the project because i didn't want to have to modify my cms installation
 by adding templates or app_hooks for displaying rich visualizations such as
 Openlayers Maps or jQplot charts.
 Another use of the plugin is overriding some css in a particular cms page.
-
 
 Release Notes
 -------------
@@ -27,7 +25,6 @@ version 0.0.4
 
 * Using ace editor instead of editarea
 * Partial documentation at readthedocs.org
-
 
 Implemented Features
 --------------------
@@ -41,7 +38,6 @@ current version:0.0.4
 * html fragments from files or inline code
 * integration with ace editor
 * ordering of elements in a FragmentCollection
-
 
 RoadMap/Planned Features
 ------------------------
