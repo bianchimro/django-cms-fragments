@@ -2,6 +2,7 @@ from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 from django.core.exceptions import ValidationError
 import editarea
+import acearea
 
 class Fragment(models.Model):
     
@@ -9,7 +10,7 @@ class Fragment(models.Model):
     fragment_type = models.CharField(max_length=10, choices=(('js', 'javascript'), ('css', 'css'),('html', 'HTML fragment')))
     file = models.FileField(null=True, blank=True, upload_to="cms_fragments");
     direct_url = models.URLField(null=True, blank=True)
-    inline_code = editarea.EditAreaField(null=True, blank=True)
+    inline_code = acearea.AceAreaField(null=True, blank=True)
     
     def clean(self):
         # Don't allow all direct_url, file and inline_code to be empty
