@@ -32,10 +32,10 @@ class AceArea(Textarea):
        
         return mark_safe(template)
        
-
+    #TODO: move ace_start.js inclusion to admin form
     class Media:
         js = ('acejs/ace.js','acejs/theme-twilight.js', 'acejs/mode-css.js', 'acejs/mode-javascript.js',
-                'acejs/mode-html.js', 'acejs/ace_start.js')
+                'acejs/mode-html.js', 'ace_start.js')
         css = {
              'all': ('acecss/defaultace.css', ),
         }

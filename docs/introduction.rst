@@ -32,7 +32,7 @@ version 0.0.4
 Implemented Features
 --------------------
 
-as of version current version:0.0.4
+current version:0.0.4
 
 * FragmentCollection and Fragment models, with admin integration
 * FragmentPlugin and FragmentCollectionPlugin for django-cms
@@ -51,5 +51,5 @@ planned version:0.1.0
 * example fixtures for FragmentCollection and Fragment models
 * live examples
 * drag and drop ordering in admin
-* better integration of EditArea
 * write docs
+* separate models for css, js and HTML fragments

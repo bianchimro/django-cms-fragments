@@ -1,4 +1,5 @@
 window.onload = function(){
+
     /**
      * Find all .ace-editor elements and set them in their respective modes.
      * */
@@ -56,7 +57,6 @@ window.onload = function(){
         });
         
         editorObjects.push(editor);
-        
         
     }
 };
