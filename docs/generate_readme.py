@@ -1,7 +1,7 @@
 import os
 
 content = ''
-for filename in ['introduction.rst', 'installation.rst', 'usage.rst']:
+for filename in ['introduction.rst', 'installation.rst', 'usage.rst', 'compatibility.rst', 'credits.rst']:
     instream = open(filename)
     content += instream.read()
     if not content.endswith("\n\n"):
@@ -12,7 +12,7 @@ for filename in ['introduction.rst', 'installation.rst', 'usage.rst']:
     instream.close()
     
 
-outfilename = 'README_test.rst'
+outfilename = 'README.rst'
 outfilenamepath = os.path.join("../", outfilename)
 print outfilenamepath
 

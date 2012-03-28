@@ -20,17 +20,26 @@ Openlayers Maps or jQplot charts.
 Another use of the plugin is overriding some css in a particular cms page.
 
 
+Release Notes
+-------------
+
+version 0.0.4
+
+* Using ace editor instead of editarea
+* Partial documentation at readthedocs.org
+
+
 Implemented Features
 --------------------
 
-current version:0.0.3
+current version:0.0.4
 
 * FragmentCollection and Fragment models, with admin integration
 * FragmentPlugin and FragmentCollectionPlugin for django-cms
 * css fragments from files, url or inline code
 * js fragments from files, url or inline code
 * html fragments from files or inline code
-* integration with EditArea by Christophe Dolivet
+* integration with ace editor
 * ordering of elements in a FragmentCollection
 
 
@@ -42,9 +51,8 @@ planned version:0.1.0
 * example fixtures for FragmentCollection and Fragment models
 * live examples
 * drag and drop ordering in admin
-* better integration of EditArea
 * write docs
-
+* separate models for css, js and HTML fragments
 
 Installation
 ------------
@@ -53,13 +61,9 @@ Installation
 
     pip install django-cms-fragments
 
-
 * Add 'cms_fragments' to your INSTALLED_APPS
 * Use 'django.contrib.staticfiles', or copy the static subfolder of django-cms-fragments
   to your static folder
-
-...
-
 
 Usage
 -----
@@ -70,19 +74,16 @@ Once you have one or more Fragments or FragmentCollections in the DB, you can ch
 plugin, with the usual django-cms interface.
 ...
 
-
 Compatibility
 -------------
 
 The app is being developed for Django >= 1.3.1. I'm not checking compatibility with other
 Django versions right now.
 
-
 Credits
 -------
 
 The project borrows from the following other codebases:
 
-* Django-EditArea copyright (c) Aditya Bhargava
-* EditArea copyright (c) Christophe Dolivet
+* ace editor by ajax.org. The ace license is included in the folder cms_fragments/static/acsjs/LICENSE
 
