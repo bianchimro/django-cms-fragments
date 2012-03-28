@@ -3,5 +3,4 @@ Credits
 
 The project borrows from the following other codebases:
 
-* Django-EditArea copyright (c) Aditya Bhargava
-* EditArea copyright (c) Christophe Dolivet
+* ace editor by ajax.org. The ace license is included in the folder cms_fragments/static/acsjs/LICENSE

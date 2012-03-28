@@ -20,17 +20,26 @@ Openlayers Maps or jQplot charts.
 Another use of the plugin is overriding some css in a particular cms page.
 
 
+Release Notes
+-------------
+
+version 0.0.4
+
+* Using ace editor instead of editarea
+* Partial documentation at readthedocs.org
+
+
 Implemented Features
 --------------------
 
-current version:0.0.2
+as of version current version:0.0.4
 
 * FragmentCollection and Fragment models, with admin integration
 * FragmentPlugin and FragmentCollectionPlugin for django-cms
 * css fragments from files, url or inline code
 * js fragments from files, url or inline code
 * html fragments from files or inline code
-* integration with EditArea by Christophe Dolivet
+* integration with ace editor
 * ordering of elements in a FragmentCollection
 
 
@@ -44,4 +53,3 @@ planned version:0.1.0
 * drag and drop ordering in admin
 * better integration of EditArea
 * write docs
-
