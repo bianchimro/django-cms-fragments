@@ -5,6 +5,7 @@ from cms.models.fields import PlaceholderField
 import editarea
 import acearea
 
+import settings
 
 class Fragment(models.Model):
     
@@ -49,6 +50,22 @@ class FragmentMembership(models.Model):
 class FragmentBlock(models.Model):
     name = models.CharField(max_length=100)
     placeholder = PlaceholderField('fragment_block_placeholder')
+
+
+class FragmentBlockMembership(models.Model):
+    fragment = models.ForeignKey(FragmentBlock)
+    fragment_collection = models.ForeignKey(FragmentRegion)
+    order = models.IntegerField(default=0)
+    
+    class Meta:
+        ordering = ('order',)
+
+
+class FragmentRegion(models.Model):
+    name = models.CharField(max_length=100, primary_key=True, choices = settings.CMS_FRAGMENTS_REGIONS)
+    fragment_blocks = models.ManyToManyField(FragmentBlock, through='FragmentBlockMembership')
+
+    
     
 
 #Plugin models
