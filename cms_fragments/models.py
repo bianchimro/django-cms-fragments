@@ -53,8 +53,8 @@ class FragmentBlock(models.Model):
 
 
 class FragmentBlockMembership(models.Model):
-    fragment = models.ForeignKey(FragmentBlock)
-    fragment_collection = models.ForeignKey(FragmentRegion)
+    fragment_block = models.ForeignKey(FragmentBlock)
+    fragment_region = models.ForeignKey(FragmentRegion)
     order = models.IntegerField(default=0)
     
     class Meta:
