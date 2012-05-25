@@ -1,8 +1,10 @@
 from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 from django.core.exceptions import ValidationError
+from cms.models.fields import PlaceholderField
 import editarea
 import acearea
+
 
 class Fragment(models.Model):
     
@@ -43,6 +45,13 @@ class FragmentMembership(models.Model):
     class Meta:
         ordering = ('order',)
 
+
+class FragmentBlock(models.Model):
+    name = models.CharField(max_length=100)
+    placeholder = PlaceholderField('fragment_block_placeholder')
+    
+
+#Plugin models
 class FragmentPluginModel(CMSPlugin):
     fragment = models.ForeignKey(Fragment)
     

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from cms.admin.placeholderadmin import PlaceholderAdmin
 from models import *
 
 
@@ -17,3 +18,6 @@ class FragmentCollectionAdmin(admin.ModelAdmin):
     inlines = [FragmentMembershipAdminInline]
     
 admin.site.register(FragmentCollection, FragmentCollectionAdmin)
+
+
+admin.site.register(FragmentBlock, PlaceholderAdmin)
