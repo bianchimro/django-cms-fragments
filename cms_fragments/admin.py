@@ -20,4 +20,13 @@ class FragmentCollectionAdmin(admin.ModelAdmin):
 admin.site.register(FragmentCollection, FragmentCollectionAdmin)
 
 
+class FragmentBlockMembershipInline(admin.StackedInline):
+    model = FragmentBlockMembership
+
+class FragmentRegionAdmin(admin.ModelAdmin):
+    model = FragmentRegion
+    inlines = [FragmentBlockMembershipInline]
+    
+    
 admin.site.register(FragmentBlock, PlaceholderAdmin)
+admin.site.register(FragmentRegion, FragmentRegionAdmin)
