@@ -1,3 +1,4 @@
+cms_fragments/demo/env
 *.pyc
 env/*
 build/*

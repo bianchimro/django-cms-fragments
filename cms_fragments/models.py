@@ -63,7 +63,7 @@ class FragmentBlockMembership(models.Model):
 
 
 class FragmentRegion(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)# choices = settings.CMS_FRAGMENTS_REGIONS)
+    name = models.CharField(max_length=100, primary_key=True, choices = settings.CMS_FRAGMENTS_REGIONS)
     fragment_blocks = models.ManyToManyField(FragmentBlock, through='FragmentBlockMembership')
 
     
