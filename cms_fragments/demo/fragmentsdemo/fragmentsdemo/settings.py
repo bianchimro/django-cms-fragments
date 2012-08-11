@@ -170,7 +170,7 @@ CMS_TEMPLATES = (
     ('template_2.html', 'Template Two'),
 )
 
-
+CMS_FRAGMENTS_REGIONS = [('region_1', 'A region'), ]
 
 
 

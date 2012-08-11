@@ -18,19 +18,55 @@ by adding templates or app_hooks for displaying rich visualizations such as
 Openlayers Maps or jQplot charts.
 Another use of the plugin is overriding some css in a particular cms page.
 
-Release Notes
--------------
+Installation
+------------
 
-version 0.0.4
+* Install via pip:
 
-* Using ace editor instead of editarea
-* Partial documentation at readthedocs.org
+    pip install django-cms-fragments
+
+* Add 'cms_fragments' to your INSTALLED_APPS
+* Use 'django.contrib.staticfiles', or copy the static subfolder of django-cms-fragments
+  to your static folder
+
+=====
+Usage
+=====
+
+Fragments
+---------
+
+
+
+FragmentsBlocks
+---------------
+
+TBW
+A "fragment block is"
+
+
+Regions
+---------------
+
+TBW
+Regions must be declared in your settings.py, with the CMS_FRAGMENTS_REGIONS setting.
+
+
+
+
+
+To use the plugin, you must create some Fragment or FragmentCollection instances with the Django admin.
+FragmentCollections are a collection of Fragments.
+Once you have one or more Fragments or FragmentCollections in the DB, you can choose which one to put in a
+plugin, with the usual django-cms interface.
+...
 
 Implemented Features
 --------------------
 
-current version:0.0.4
+current version:0.0.5
 
+* FragmentRegions an FragmentBlock
 * FragmentCollection and Fragment models, with admin integration
 * FragmentPlugin and FragmentCollectionPlugin for django-cms
 * css fragments from files, url or inline code
@@ -38,6 +74,7 @@ current version:0.0.4
 * html fragments from files or inline code
 * integration with ace editor
 * ordering of elements in a FragmentCollection
+* ...
 
 RoadMap/Planned Features
 ------------------------
@@ -50,25 +87,18 @@ planned version:0.1.0
 * write docs
 * separate models for css, js and HTML fragments
 
-Installation
-------------
 
-* Install via pip:
+Release Notes
+-------------
 
-    pip install django-cms-fragments
+version 0.0.5:
 
-* Add 'cms_fragments' to your INSTALLED_APPS
-* Use 'django.contrib.staticfiles', or copy the static subfolder of django-cms-fragments
-  to your static folder
+* Introduced FragmentRegions
 
-Usage
------
+version 0.0.4:
 
-To use the plugin, you must create some Fragment or FragmentCollection instances with the Django admin.
-FragmentCollections are a collection of Fragments.
-Once you have one or more Fragments or FragmentCollections in the DB, you can choose which one to put in a
-plugin, with the usual django-cms interface.
-...
+* Using ace editor instead of editarea
+* Partial documentation at readthedocs.org
 
 Compatibility
 -------------

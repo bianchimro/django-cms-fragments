@@ -14,6 +14,7 @@ Contents:
    introduction
    installation
    usage
+   features
    compatibility
    credits
 
@@ -21,6 +22,6 @@ Contents:
 Indices and tables
 ------------------
 
-* :ref:`genindex`
+* :ref:`genindex`   
 * :ref:`search`
 
