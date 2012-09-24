@@ -25,6 +25,7 @@ class RegionNode(template.Node):
         if self.region_name not in valid_regions:
             #message = "Region %s not declared in settings %s" % (self.region_name, str(settings.CMS_FRAGMENTS_REGIONS))
             #raise Exception(message)
+            #TODO: raise some warning here
             return ""
         
         try:

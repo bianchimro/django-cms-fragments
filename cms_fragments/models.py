@@ -32,6 +32,7 @@ class Fragment(models.Model):
 
     
 class FragmentCollection(models.Model):
+
     name = models.CharField(max_length=100)
     fragments = models.ManyToManyField(Fragment, through='FragmentMembership')
     
@@ -40,6 +41,7 @@ class FragmentCollection(models.Model):
 
 
 class FragmentMembership(models.Model):
+
     fragment = models.ForeignKey(Fragment)
     fragment_collection = models.ForeignKey(FragmentCollection)
     order = models.IntegerField(default=0)
@@ -49,11 +51,16 @@ class FragmentMembership(models.Model):
 
 
 class FragmentBlock(models.Model):
+
     name = models.CharField(max_length=100)
     placeholder = PlaceholderField('fragment_block_placeholder')
+    
+    def __unicode__(self):
+        return u'%s' % (self.name)
 
 
 class FragmentBlockMembership(models.Model):
+
     fragment_block = models.ForeignKey(FragmentBlock)
     fragment_region = models.ForeignKey('FragmentRegion')
     order = models.IntegerField(default=0)
@@ -63,10 +70,12 @@ class FragmentBlockMembership(models.Model):
 
 
 class FragmentRegion(models.Model):
+
     name = models.CharField(max_length=100, primary_key=True, choices = settings.CMS_FRAGMENTS_REGIONS)
     fragment_blocks = models.ManyToManyField(FragmentBlock, through='FragmentBlockMembership')
 
-    
+    def __unicode__(self):
+        return u'%s' % (self.name)    
     
 
 #Plugin models
