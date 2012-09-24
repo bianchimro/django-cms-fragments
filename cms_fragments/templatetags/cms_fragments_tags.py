@@ -31,6 +31,7 @@ class RegionNode(template.Node):
             region = cms_fragments.models.FragmentRegion.objects.get(pk = self.region_name)
         except:
             return ""
+            
         blocks = region.fragment_blocks.all()
         for block in blocks:    
             print dir(block.placeholder)
