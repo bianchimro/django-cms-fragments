@@ -34,7 +34,6 @@ class RegionNode(template.Node):
             
         blocks = region.fragment_blocks.all()
         for block in blocks:    
-            print dir(block.placeholder)
             output += block.placeholder.render(context, None)
             
         return output
