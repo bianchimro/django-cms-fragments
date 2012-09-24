@@ -23,17 +23,17 @@ class RegionNode(template.Node):
         output = ""
         
         if self.region_name not in valid_regions:
-            message = "Region %s not declared in settings %s" % (self.region_name, str(settings.CMS_FRAGMENTS_REGIONS))
-        except:
+            #message = "Region %s not declared in settings %s" % (self.region_name, str(settings.CMS_FRAGMENTS_REGIONS))
+            #raise Exception(message)
             return ""
         
         try:
             region = cms_fragments.models.FragmentRegion.objects.get(pk = self.region_name)
         except:
             return ""
-            
         blocks = region.fragment_blocks.all()
         for block in blocks:    
+            print dir(block.placeholder)
             output += block.placeholder.render(context, None)
             
         return output
