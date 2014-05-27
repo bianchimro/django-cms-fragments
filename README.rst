@@ -26,40 +26,41 @@ Installation
     pip install django-cms-fragments
 
 * Add 'cms_fragments' to your INSTALLED_APPS
-* Use 'django.contrib.staticfiles', or copy the static subfolder of django-cms-fragments
+* Use 'django.contrib.staticfiles'(by adding it into your INSTALLED_APPS in settings.py), or copy the static subfolder of django-cms-fragments
   to your static folder
 
 =====
 Usage
 =====
 
+Add the following code to your admin.py so that you can access the fragments app from your Django Admin panel.
+
+#Lets you add new css, html or js fragments.
+class FragmentAdmin(admin.ModelAdmin):
+    fields = ['name', 'fragment_type', 'file', 'direct_url', 'inline_code']
+
+#Lets you add new collection of fragments, maybe a group of css,js and html that sticks together.
+class FragmentCollectionAdmin(admin.ModelAdmin):
+    fields = ['name'] #should also have fragments field but giving some error right now, will come back later
+
+admin.site.register(Page, StaffOnlyCMSPageAdmin)
+admin.site.register(Fragment, FragmentAdmin)  
+admin.site.register(FragmentCollection, FragmentCollectionAdmin)
+
 Fragments
 ---------
 
-
+Select add next to fragment title in the admin panel. Then choose the type of the fragment you want to create. (JavaScript, HTML or CSS)
+Once you create a fragment you can use it in multiple pages by just choosing its name from a drop down menu.
+You can also create a new fragment while editing a page after adding a fragment plugin clicking the plus button instead of choosing an already created fragment from the drop down.
 
 FragmentsBlocks
 ---------------
-
-TBW
-A "fragment block is"
-
+Not working yet.
 
 Regions
 ---------------
-
-TBW
-Regions must be declared in your settings.py, with the CMS_FRAGMENTS_REGIONS setting.
-
-
-
-
-
-To use the plugin, you must create some Fragment or FragmentCollection instances with the Django admin.
-FragmentCollections are a collection of Fragments.
-Once you have one or more Fragments or FragmentCollections in the DB, you can choose which one to put in a
-plugin, with the usual django-cms interface.
-...
+Not working yet.
 
 Implemented Features
 --------------------
