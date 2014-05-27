@@ -34,6 +34,16 @@
 
 {% if fragment.fragment_type == 'html' %}
 {% autoescape off %}
-{{ fragment.inline_code }}
+    {% if fragment.file  %}
+        {% autoescape off %}
+        {{fragment.spitContentOfHTML}}
+        {% endautoescape %}
+    {% endif %}
+        {% if fragment.inline_code  %}
+        {% autoescape off %}
+        {{ fragment.inline_code }}
+        {% endautoescape %}
+    {% endif %}
+
 {% endautoescape %}
 {% endif %}
