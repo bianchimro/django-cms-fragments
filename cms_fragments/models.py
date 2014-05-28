@@ -5,13 +5,13 @@ from django.core.exceptions import ValidationError
 from cms.models.fields import PlaceholderField
 import editarea
 import acearea
-
+import urllib
 import settings
 
 class Fragment(models.Model):
     
     name = models.CharField(max_length=100)
-    fragment_type = models.CharField(max_length=10, choices=(('js', 'javascript'), ('css', 'css')))
+    fragment_type = models.CharField(max_length=10, choices=(('js', 'JavaScript'), ('css', 'CSS'), ('html', 'HTML'))) #to add html option insert , ('html', 'html')
     file = models.FileField(null=True, blank=True, upload_to="cms_fragments");
     direct_url = models.URLField(null=True, blank=True)
     inline_code = acearea.AceAreaField(null=True, blank=True)
@@ -31,14 +31,12 @@ class Fragment(models.Model):
         return "none"
 
     def spitContentOfHTML(self):
-        url = 'http://abc.com' # write the url here
 
         usock = urllib.urlopen(self.file.url)
         data = usock.read()
         usock.close()
 
         return data
-
     
 class FragmentCollection(models.Model):
 
