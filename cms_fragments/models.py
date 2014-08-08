@@ -19,7 +19,7 @@ class Fragment(models.Model):
     def clean(self):
         # Don't allow all direct_url, file and inline_code to be empty
         if not self.file and not self.direct_url and not self.inline_code:
-            raise ValidationError('You must provide an uploaded file or an url')
+            raise ValidationError('You must provide an uploaded file, a url, or some inline code')
     
     def __unicode__(self):
         if self.file:
